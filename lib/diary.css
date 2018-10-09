@@ -1,0 +1,7 @@
+.hero {
+  width: 100vw;
+  height: 70vh;
+  background-image: url('https://cl.ly/02f469865813/Screen%20Shot%202018-10-08%20at%208.02.40%20PM.jpg');
+  background-size: cover;
+  background-position: center;
+}

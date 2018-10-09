@@ -2,26 +2,56 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- style sheets -->
+    <!-- Style Sheets -->
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="lib/main.css">
     <link rel="stylesheet" type="text/css" href="lib/foods.css">
-    <!-- browser tab title -->
+    <!-- Tab Title -->
     <title>Quantified Self - Manage Foods</title>
   </head>
   <body>
-    <!-- nav bar -->
+    <!-- Nav Bar -->
     <nav class="nav">
       <div class="title">
         <h1>FOOD MANAGEMENT</h1>
       </div>
     </nav>
-
-    <!-- food image -->
     <div class="hero">
+    <!--  Create Food -->
+      <section id="createFood">
+        <input type="string" class="input" id="newfoodName" placeholder="Enter food name"><br><br>
+        <input type="number" class="input" id="newfoodCalories" placeholder="Enter calorie amount"><br>
+        <input type="button" class="button" id="newFood-btn" value="Add Food">
+      </section>
+
+      <!--  Filter Food -->
+      <section id="filterByFood">
+        <input type="text" class="input" id="foodSearch" placeholder="Filter foods by name">
+        <i id="searchIcon" class="fa fa-search"></i>
+      </section>
+
+      <!-- Food List -->
+      <section id="listFoods">
+        <div id="listFoods-title">
+          <h2>Food List</h2>
+          <p>A list of all foods including the food name and total calories.</p>
+        </div>
+  
+      <!-- Food Row: Hard Code for SetUp -->
+          <article class="food">
+            <p class="name">Blueberries</p>
+            <div class="hidden"></div>
+            <p class="calories">100</p>
+            <div class="hidden"></div>
+            <button class="updateFood-btn" id="${food.id}">Update</button>
+            <button class="deleteFood-btn" id="${food.id}">Delete</button>
+          </article>
+      </section>
     </div>
 
-    <!-- footer  -->
+    <!-- Footer  -->
     <div class="footer">
       <ul>
         <li>
@@ -41,13 +71,11 @@
         </li>
       </ul>
     </div>
-  
 
-
-    <!-- jquery -->
+    <!-- JQuery -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     
-    <!-- javascript -->
+    <!-- Javascript -->
     <script src="main.bundle.js"></script>
     </div>
   </body>

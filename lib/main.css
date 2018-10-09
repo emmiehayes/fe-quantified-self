@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+}
+
+nav {
+  background: #ffffff;
+  height: 100px;
+}
+
+h1 {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 50px;
+  text-align: center;
+}
+
+.hero {
+  width: 100vw;
+  height: 60vh;
+  background-image: url('https://cl.ly/0da941295d5e/Screen%20Shot%202018-10-08%20at%206.23.23%20PM.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+div {
+  text-align: center;
+}
+
+.footer {
+  width: 100vw;
+  height: 60vh;
+  position: fixed;
+}
+
+.footer li {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 25px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 20px;
+}
+
+.footer li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.footer li a:hover {
+  background-color: #C1EB8E;
+}

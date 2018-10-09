@@ -2,9 +2,7 @@
 
 ### Local Setup:
 
-```
-git clone git@github.com:emmie/qs-fe-starter-kit.git quantified-self-fe
-```
+`git clone https://github.com/emmiehayes/fe-quantified-self.git`
 
 `cd` into `fe-quantified-self` directory
 

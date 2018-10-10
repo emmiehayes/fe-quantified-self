@@ -59,7 +59,7 @@
   font-family: 'Source Sans Pro', sans-serif;
 	font-size: 15px;
   color: #ffffff;
-  background-color: #d81d1dbd;
+  background-color: #df1659bd;
 	border-radius: 28px;
   cursor: pointer;
   margin-top: 15px;
@@ -68,7 +68,7 @@
 }
 
 .deleteFood-btn:hover {
-  background-color: #d81d1dfb;
+  background-color: #df1659;
 }
 
 .updateFood-btn {

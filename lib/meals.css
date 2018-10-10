@@ -1,7 +1,137 @@
 .hero {
-  width: 100vw;
-  height: 70vh;
-  background-image: url('https://cl.ly/a56985f78b85/Screen%20Shot%202018-10-08%20at%207.50.34%20PM.jpg');
+  background-image: url('https://cl.ly/a226d70aba81/Screen%20Shot%202018-10-08%20at%207.29.56%20PM.jpg');
   background-size: cover;
   background-position: center;
+  width: 100vw;
+  height: 70vh;
 }
+
+.leftContainer {
+  float: left;
+  margin-left: 390px;
+  margin-top: 20px;
+}
+
+.rightContainer {
+  float: right;
+  margin-right: 410px;
+  margin-top: 20px;
+}
+
+.mealFood-btn {
+  font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+  color: #ffffff;
+  background-color: #1572c9;
+	border-radius: 28px;
+	cursor: pointer;
+  width: 250px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+/* Left Container Elements */
+#step1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.allMeals {
+  margin-left: 50px;
+  margin-bottom: 15px;
+}
+
+.meal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  width: 150px;
+  background-color: #ffffff60;
+  margin: 6px;
+  padding: 2px;
+}
+
+.mealName {
+  width: 100px;
+}
+
+#meal-chk {
+  width: 30px;
+  height: 30px;
+  margin-top: 15px;
+}
+
+.createMeal-btn {
+  font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+  color: #ffffff;
+  background-color: #056826c4;
+	border-radius: 28px;
+	cursor: pointer;
+  width: 200px;
+  height: 40px;
+  margin: 15px;
+}
+
+.createMeal-btn:hover {
+   background-color: #056826;
+}
+
+/* Right Container Elements */
+
+#step2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.allFoods {
+  margin-bottom: 50px;
+  margin-bottom: 15px;
+}
+
+.food {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  background-color: #ffffff60;
+  margin: 6px;
+  padding: 2px;
+}
+
+.name {
+  width: 150px;
+}
+
+.calories {
+  width: 30px;
+}
+
+#food-chk {
+  width: 30px;
+  height: 30px;
+  margin-top: 15px;
+}
+
+.createFood-btn {
+  font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+  color: #ffffff;
+  background-color: #056826c4;
+	border-radius: 28px;
+	cursor: pointer;
+  width: 200px;
+  height: 40px;
+  margin: 15px;
+}
+
+.createFood-btn:hover {
+  background-color: #056826;
+}
+
+

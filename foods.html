@@ -28,7 +28,7 @@
 
       <!--  Filter Food -->
       <section id="filterByFood">
-        <input type="text" class="input" id="foodSearch" placeholder="Filter foods by name">
+        <input type="text" class="input" id="search" placeholder="Filter foods by name">
         <i id="searchIcon" class="fa fa-search"></i>
       </section>
 
@@ -36,18 +36,19 @@
       <section id="listFoods">
         <div id="listFoods-title">
           <h2>Food List</h2>
-          <p>A list of all foods including the food name and total calories.</p>
+          <p>Scroll through the list of food names and calorie amount).</p>
         </div>
-  
-      <!-- Food Row: Hard Code for SetUp -->
-          <article class="food">
-            <p class="name">Blueberries</p>
+        <!-- Food Row: Hard Code for SetUp -->
+        <div id="food-list">
+          <article class="food-info">
+            <!-- <p class="name">Blueberries</p>
             <div class="hidden"></div>
             <p class="calories">100</p>
             <div class="hidden"></div>
             <button class="updateFood-btn" id="${food.id}">Update</button>
-            <button class="deleteFood-btn" id="${food.id}">Delete</button>
+            <button class="deleteFood-btn" id="${food.id}">Delete</button> -->
           </article>
+        </div>
       </section>
     </div>
 
@@ -70,7 +71,7 @@
           <a href="recipes.html">Recipes</a>
         </li>
       </ul>
-    </div>
+    </div>  
 
     <!-- JQuery -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>

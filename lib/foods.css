@@ -9,19 +9,19 @@
 #createFood {
   float: left;
   margin-left: 350px;
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 #filterByFood {
   float: left;
   margin-left: -230px;
-  margin-top: 320px;
+  margin-top: 370px;
 }
 
 #listFoods {
   float: right;
-  margin-right: 200px;
-  margin-top: 80px;
+  margin-right: 300px;
+  margin-top: 50px;
 }
 
 .input {
@@ -57,13 +57,13 @@
 
 .deleteFood-btn {
   font-family: 'Source Sans Pro', sans-serif;
-	font-size: 15px;
+	font-size: 14px;
   color: #ffffff;
   background-color: #df1659bd;
 	border-radius: 28px;
   cursor: pointer;
-  margin-top: 15px;
-  width: 75px;
+  margin-top: 8px;
+  width: 70px;
   height: 30px;
 }
 
@@ -73,15 +73,15 @@
 
 .updateFood-btn {
   font-family: 'Source Sans Pro', sans-serif;
-	font-size: 15px;
+	font-size: 14px;
   color: #ffffff;
   background-color: #1572c9b4;
 	border-radius: 28px;
   cursor: pointer;
-  margin-top: 15px;
-  margin-right: 9px;
-  width: 75px;
+  margin-top: 8px;
+  width: 70px;
   height: 30px;
+  margin-right: 25px;
 }
 
 .updateFood-btn:hover {
@@ -92,7 +92,7 @@ article {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 2px;
+  padding: 5px;
   margin: 6px;
 }
 
@@ -100,9 +100,14 @@ article {
    font-family: 'Source Sans Pro', sans-serif;
 }
 
-.food {
+#food-list {
+  height: 320px;
+  overflow: scroll;
+}
+
+.food-info {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   background-color: #ffffff60;
 }
 
@@ -111,10 +116,8 @@ article {
 }
 
 .calories {
-  width: 30px;
+  width: 110px;
 }
 
-.hidden {
-  width: 100px;
-}
+
 

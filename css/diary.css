@@ -6,3 +6,44 @@
   background-position: center;
 }
 
+#list-meals {
+  height: 400px;
+  columns: 5;
+  margin-left: 300px;
+}
+
+.meal-columns {
+  font-weight: bold;
+}
+
+.meal-info {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  height: 400px;
+  overflow: scroll;
+}
+
+.food-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  background-color: #ffffff60;
+  padding: 5px;
+  margin: 5px;
+}
+
+.name {
+  width: 75px;
+}
+
+.calories {
+  width: 50px;
+}
+
+.delete-btn {
+  color: rgb(198, 41, 101);
+  cursor: pointer;
+  width: 30px;
+}

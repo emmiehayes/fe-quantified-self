@@ -1,3 +1,4 @@
+/* Page Setup */
 .hero {
   background-image: url('https://cl.ly/a226d70aba81/Screen%20Shot%202018-10-08%20at%207.29.56%20PM.jpg');
   background-size: cover;
@@ -6,23 +7,25 @@
   height: 70vh;
 }
 
-#createFood {
+#column1A {
   float: left;
   margin-left: 350px;
   margin-top: 150px;
 }
 
-#filterByFood {
+#column1B {
   float: left;
   margin-left: -230px;
   margin-top: 370px;
 }
 
-#listFoods {
+#column2 {
   float: right;
   margin-right: 300px;
   margin-top: 50px;
 }
+
+/* Column1 Elements */
 
 .input {
   font-family: 'Source Sans Pro', sans-serif;
@@ -31,12 +34,6 @@
   text-align: center;
   width: 200px;
   height: 40px;
-}
-
-#searchIcon {
-  position: relative;
-  right: 200px;
-  color: #7B7B7B;
 }
 
 #newFood-btn {
@@ -55,20 +52,40 @@
   background-color: #056826;
 }
 
-.deleteFood-btn {
-  font-family: 'Source Sans Pro', sans-serif;
-	font-size: 14px;
-  color: #ffffff;
-  background-color: #df1659bd;
-	border-radius: 28px;
-  cursor: pointer;
-  margin-top: 8px;
-  width: 70px;
-  height: 30px;
+#searchIcon {
+  position: relative;
+  right: 200px;
+  color: #7B7B7B;
 }
 
-.deleteFood-btn:hover {
-  background-color: #df1659;
+/* Column2 Elements */
+
+#listFoods-title {
+   font-family: 'Source Sans Pro', sans-serif;
+}
+
+#food-list {
+  height: 320px;
+  overflow: scroll;
+}
+
+.food-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  background-color: #ffffff60;
+  padding: 5px;
+  margin: 6px;
+}
+
+.name {
+  width: 150px;
+}
+
+.calories {
+  width: 110px;
 }
 
 .updateFood-btn {
@@ -88,36 +105,19 @@
   background-color: #1572c9;
 }
 
-article {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 5px;
-  margin: 6px;
-}
-
-#listFoods-title {
-   font-family: 'Source Sans Pro', sans-serif;
-}
-
-#food-list {
-  height: 320px;
-  overflow: scroll;
-}
-
-.food-info {
+.deleteFood-btn {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 15px;
-  background-color: #ffffff60;
+	font-size: 14px;
+  color: #ffffff;
+  background-color: #df1659bd;
+	border-radius: 28px;
+  cursor: pointer;
+  margin-top: 8px;
+  width: 70px;
+  height: 30px;
 }
 
-.name {
-  width: 150px;
+.deleteFood-btn:hover {
+  background-color: #df1659;
 }
-
-.calories {
-  width: 110px;
-}
-
-
 

@@ -11,7 +11,6 @@
     <!-- Tab Title -->
     <title>Quantified Self - Manage Meals</title>
   </head>
-
   <body>
     <!-- Nav Bar -->
     <nav class="nav">
@@ -21,69 +20,44 @@
     </nav>
     <!-- Main -->
     <div class="hero">
-      <div class="leftContainer">
+      <div class="column1"> 
         <div id="step1">
-          <p id="instructions">
-            <strong>STEP 1:</strong> 
-            <br>What meal would you like to log?
-          </p>
+          STEP 1:
+          <br>
+          SELECT FOOD(S) TO ADD TO A MEAL:
         </div>
-        <div id="create">
-          <button class="createMeal-btn">Create New Meal</button>
-        </div>
-        <div class="allMeals">
-          <div class="meal">
-            <p class="mealName">Breakfast</p>
-            <input type="checkbox" id="meal-chk">
-          </div>
-          <div class="meal">
-            <p class="mealName">Lunch</p>
-            <input type="checkbox" id="meal-chk">
-          </div>
-          <div class="meal">
-            <p class="mealName">Dinner</p>
-            <input type="checkbox" id="meal-chk">
-          </div>
-          <div class="meal">
-            <p class="mealName">Snack</p>
-            <input type="checkbox" id="meal-chk">
+        <br>
+        <div id="allFoods">
+          <div class="food">
+            <!-- <p class="name">Blueberries</p>
+            <p class="calories">100</p>
+            <input type="checkbox" id="food-chk"> -->
           </div>
         </div>
       </div>
-      <div class="rightContainer"> 
+      <div class="column2">
         <div id="step2">
-          <p id="instructions">
-            <strong>STEP 2:</strong> 
-            <br>What foods did you consume?
-          </p>
+          STEP 2:
+          <br>
+          SELECT THE MEAL:
         </div>
-        <div id="create">
-          <button class="createFood-btn">Create New Food</button>
-        </div>
-        <div class="allFoods">
-          <div class="food">
-            <p class="name">Blueberries</p>
-            <p class="calories">100</p>
-            <input type="checkbox" id="food-chk">
-          </div>
-          <div class="food">
-            <p class="name">Blueberries</p>
-            <p class="calories">100</p>
-            <input type="checkbox" id="food-chk">
-          </div>
-          <div class="food">
-            <p class="name">Blueberries</p>
-            <p class="calories">100</p>
-            <input type="checkbox" id="food-chk">
-          </div>
-          <div class="food">
-            <p class="name">Blueberries</p>
-            <p class="calories">100</p>
-            <input type="checkbox" id="food-chk">
-          </div>
+        <br>
+        <div class="allMeals">
+          <form id="meal">
+            <br>
+            <input type="submit" class="meal-btn" id="breakfast" value="Breakfast">
+            <br>
+            <br>
+            <input type="submit" class="meal-btn" id="lunch" value="Lunch">
+            <br>
+            <br>
+            <input type="submit" class="meal-btn" id="dinner" value="Dinner">
+            <br>
+            <br>
+            <input type="submit" class="meal-btn" id="snack" value="Snack">
+          </form>
         </div>
       </div>
-      <button class="mealFood-btn">Add To Food Diary</button>
     </div>
     <!-- Footer  -->
     <div class="footer">

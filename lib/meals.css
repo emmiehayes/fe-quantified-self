@@ -1,3 +1,4 @@
+/* Page Setup */
 .hero {
   background-image: url('https://cl.ly/a226d70aba81/Screen%20Shot%202018-10-08%20at%207.29.56%20PM.jpg');
   background-size: cover;
@@ -6,91 +7,31 @@
   height: 70vh;
 }
 
-.leftContainer {
-  float: left;
-  margin-left: 390px;
-  margin-top: 20px;
+.column1 {
+    float: left;
+    margin-left: 350px;  
+    margin-top: 40px;
 }
 
-.rightContainer {
-  float: right;
-  margin-right: 410px;
-  margin-top: 20px;
+.column2 {
+    float: right;
+    margin-right: 400px; 
+    margin-top: 40px;
 }
 
-.mealFood-btn {
-  font-family: 'Source Sans Pro', sans-serif;
-	font-size: 18px;
-  color: #ffffff;
-  background-color: #1572c9;
-	border-radius: 28px;
-	cursor: pointer;
-  width: 250px;
-  height: 40px;
-  margin-top: 10px;
-}
-
-/* Left Container Elements */
+/* Column 1 */
 #step1 {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
   text-align: center;
+  font-weight: bold;
 }
 
-.allMeals {
-  margin-left: 50px;
+#allFoods {
   margin-bottom: 15px;
-}
-
-.meal {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 18px;
-  width: 150px;
-  background-color: #ffffff60;
-  margin: 6px;
-  padding: 2px;
-}
-
-.mealName {
-  width: 100px;
-}
-
-#meal-chk {
-  width: 30px;
-  height: 30px;
-  margin-top: 15px;
-}
-
-.createMeal-btn {
-  font-family: 'Source Sans Pro', sans-serif;
-	font-size: 18px;
-  color: #ffffff;
-  background-color: #056826c4;
-	border-radius: 28px;
-	cursor: pointer;
-  width: 200px;
-  height: 40px;
-  margin: 15px;
-}
-
-.createMeal-btn:hover {
-   background-color: #056826;
-}
-
-/* Right Container Elements */
-
-#step2 {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 20px;
-  text-align: center;
-}
-
-.allFoods {
-  margin-bottom: 50px;
-  margin-bottom: 15px;
+  height: 350px;
+  width: 360px;
+  overflow: scroll;
 }
 
 .food {
@@ -98,7 +39,7 @@
   flex-direction: row;
   justify-content: space-between;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   background-color: #ffffff60;
   margin: 6px;
   padding: 2px;
@@ -113,25 +54,34 @@
 }
 
 #food-chk {
-  width: 30px;
-  height: 30px;
-  margin-top: 15px;
-}
-
-.createFood-btn {
-  font-family: 'Source Sans Pro', sans-serif;
-	font-size: 18px;
-  color: #ffffff;
-  background-color: #056826c4;
-	border-radius: 28px;
-	cursor: pointer;
-  width: 200px;
+  width: 50px;
   height: 40px;
-  margin: 15px;
-}
-
-.createFood-btn:hover {
-  background-color: #056826;
+  margin-top: 5px;
 }
 
 
+/* Column 2 */
+#step2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  margin-left: 17px;
+  font-weight: bold;
+}
+
+.allMeals {
+  margin-left: 50px;
+  margin-bottom: 15px;
+  height: 320px;
+  overflow: scroll;
+}
+
+.meal-btn {
+  font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+  color: #ffffff;
+  background-color: #3f9de6c4;
+  cursor: pointer;
+  width: 150px;
+  height: 60px;
+  margin-right: 20px;
+}

@@ -1,4 +1,23 @@
 /* Page Setup */
+body {
+  margin: 0;
+}
+
+nav {
+  background: #ffffff;
+  height: 90px;
+}
+
+h1 {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 50px;
+  text-align: center;
+}
+
+div {
+  text-align: center;
+}
+
 .hero {
   background-image: url('https://cl.ly/a226d70aba81/Screen%20Shot%202018-10-08%20at%207.29.56%20PM.jpg');
   background-size: cover;
@@ -8,15 +27,15 @@
 }
 
 .column1 {
-    float: left;
-    margin-left: 350px;  
-    margin-top: 40px;
+  float: left;
+  margin-left: 350px;  
+  margin-top: 40px;
 }
 
 .column2 {
-    float: right;
-    margin-right: 400px; 
-    margin-top: 40px;
+  float: right;
+  margin-right: 400px; 
+  margin-top: 40px;
 }
 
 /* Column 1 */
@@ -77,11 +96,35 @@
 
 .meal-btn {
   font-family: 'Source Sans Pro', sans-serif;
-	font-size: 15px;
+  font-size: 15px;
   color: #ffffff;
   background-color: #3f9de6c4;
   cursor: pointer;
   width: 150px;
   height: 60px;
   margin-right: 20px;
+}
+
+.footer {
+  width: 100vw;
+  position: fixed;
+}
+
+.footer li {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 25px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.footer li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+}
+
+.footer li a:hover {
+  text-decoration:underline;
 }

@@ -5,7 +5,7 @@ body {
 nav {
   background: #ffffff;
   height: 90px;
-  
+
 }
 
 h1 {
@@ -47,5 +47,5 @@ div {
 }
 
 .footer li a:hover {
-  background-color: #C1EB8E;
+  text-decoration:underline;
 }

@@ -2,48 +2,47 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- Style Sheets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/foods.css">
-    <!-- Tab Title -->
     <title>Quantified Self - Manage Foods</title>
   </head>
   <body>
-    <!-- Nav Bar -->
+
+
     <nav class="nav">
       <div class="title">
         <h1>FOOD MANAGEMENT</h1>
       </div>
     </nav>
+    
+
     <div class="hero">
-    <!--  Create Food Button -->
-      <section id="column1A">
-        <input type="string" class="input" id="newfoodName" placeholder="Enter food name"><br><br>
-        <input type="number" class="input" id="newfoodCalories" placeholder="Enter calorie amount"><br>
-        <input type="button" class="button" id="newFood-btn" value="Add Food">
-      </section>
-      <!--  Filter Search Food -->
-      <section id="column1B">
-        <input type="text" class="input" id="search" placeholder="Filter foods by name">
-        <i id="searchIcon" class="fa fa-search"></i>
-      </section>
-      <!-- Food List -->
-      <section id="column2">
-        <div id="listFoods-title">
-          <h2>Food List</h2>
-          <p>Scroll through the list of food names and calorie amount).</p>
+      <div class="container">
+        <div class="main">
+          <div class="create-form">
+            <input type="string" class="input" id="newfoodName" placeholder="Enter food name">
+            <input type="number" class="input" id="newfoodCalories" placeholder="Enter calorie amount"><br>
+            <input type="button" class="button" id="newFood-btn" value="Add Food">
+          </div>
+          <div class="interactive-list">
+            <input type="text" class="input" id="search" placeholder="Filter foods by name"><i id="searchIcon" class="fa fa-search"></i>
+            <header id="list-title">
+              <h2>My Food List</h2>
+              <p>Scroll through the list to see food name and calorie count.</p>
+            </header>
+            <div id="food-list">
+              <!-- Append <article class="food-info"> -->
+              </div>
+          </div>
         </div>
-        <div id="food-list">
-          <article class="food-info">
-            <!-- Append -->
-          </article>
-        </div>
-      </section>
+      </div>
     </div>
-    <!-- Footer  -->
+
+
+
     <div class="footer">
       <ul>
         <li>
@@ -63,10 +62,13 @@
         </li>
       </ul>
     </div>  
-    <!-- JQuery -->
+
+
+    
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <!-- Javascript -->
     <script src="main.bundle.js"></script>
-    </div>
+  
+
+
   </body>
 </html>

@@ -90,6 +90,8 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   background-color: #ffffff60;
+  border: 1px solid;
+  border-color: black;
   align-items: center;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
@@ -99,27 +101,13 @@ h1 {
 }
 
 .name {
+  text-align: left;
   width: 150px;
 }
 
 .calories {
-  width: 200px;
-}
-
-.deleteFood-btn {
-  font-family: 'Source Sans Pro', sans-serif;
-	font-size: 13px;
-  border-radius: 28px;
-  background-color: #df1659;
-  color: white;
-  cursor: pointer;
-  width: 70px;
-  height: 30px;
-  margin: 2px;
-}
-
-.deleteFood-btn:hover {
-	font-size: 17px;
+  text-align: left;
+  width: 100px;
 }
 
 .updateFood-btn {

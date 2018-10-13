@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/meals.css">
     <title>Quantified Self - Manage Meals</title>
   </head>
@@ -19,30 +20,30 @@
 
 
     <div class="hero">
-      <div class="column1"> 
-        <div id="step1">
-          STEP 1:
-          <br>
-          SELECT FOOD(S) TO ADD TO A MEAL:
-        </div>
-        <br>
-        <div id="allFoods">
-          <div class="food">
-            <!-- Append -->
+      <div class="container"> 
+        <header class="steps">
+          <h2>STEP 1</h2>
+          <p>SCROLL OR FILTER TO FIND FOOD(S) TO ADD TO A MEAL:</p>
+        </header>
+        <div class="interactive-list">
+          <input type="text" class="input" id="search" placeholder="Filter foods by name...">
+          <i id="searchIcon" class="fa fa-search"></i>
+          <header id="list-title">
+            <h2></h2>
+          </header>
+          <div id="food-list-for-meals">
+            <!-- Append  -->
           </div>
         </div>
-      </div>
-      <div class="column2">
-        <div id="step2">
-          STEP 2:
-          <br>
-          SELECT THE MEAL:
-        </div>
-        <br>
-        <div id="allMeals">
+        <br><br>
+        <header class="steps">
+          <h2>STEP 2</h2>
+          <p>SELECT A MEAL TO ADD THE FOODS:</p>
+        </header>
+        <div id="meal-buttons">
           <form id="meal">
             <!-- Append -->
-          </form> 
+          </form>
         </div>
       </div>
     </div>

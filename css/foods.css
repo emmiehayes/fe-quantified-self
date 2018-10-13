@@ -25,18 +25,11 @@ h1 {
   height: 70vh;
 }
 
-.container { 
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  height: 70vh;
-}
-
-.main {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 20px;
+  align-items: center;
   width: 100vw;
   height: 70vh;
 }
@@ -50,7 +43,7 @@ h1 {
   height: 40px;
 }
 
-#newFood-btn {
+#add-food-btn {
   font-family: 'Source Sans Pro', sans-serif;
 	font-size: 15px;
   color: #ffffff;
@@ -62,8 +55,8 @@ h1 {
   margin: 15px;
 }
 
-#newFood-btn:hover {
-  font-size: 19px;
+#add-food-btn:hover {
+  text-decoration:underline;
 }
 
 #searchIcon {
@@ -72,8 +65,18 @@ h1 {
   color: #7B7B7B;
 }
 
-#list-title {
+h2 {
   font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  line-height: 17px;
+  margin-top: 30px;
+}
+
+p {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  font-weight: bold;
+  line-height: 5px;
 }
 
 #food-list {
@@ -82,7 +85,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   overflow: scroll;
-  height: 250px;
+  height: 230px;
 }
 
 .food-info {
@@ -101,6 +104,7 @@ h1 {
 }
 
 .name {
+  text-transform: capitalize;
   text-align: left;
   width: 150px;
 }
@@ -123,7 +127,7 @@ h1 {
 }
 
 .updateFood-btn:hover {
-	font-size: 17px;
+  text-decoration:underline;
 }
 
 .footer {

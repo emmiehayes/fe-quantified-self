@@ -47,7 +47,7 @@ h1 {
   font-family: 'Source Sans Pro', sans-serif;
 	font-size: 15px;
   color: #ffffff;
-  background-color: #105a29;
+  background-color: #148138;
 	border-radius: 28px;
 	cursor: pointer;
   width: 215px;
@@ -114,11 +114,10 @@ p {
   width: 100px;
 }
 
-.updateFood-btn {
+button {
   font-family: 'Source Sans Pro', sans-serif;
-	font-size: 13px;
+	font-size: 12px;
   border-radius: 28px;
-  background-color: rgb(13, 79, 150);
   color: white;
   cursor: pointer;
   width: 70px;
@@ -126,8 +125,42 @@ p {
   margin: 2px;
 }
 
-.updateFood-btn:hover {
-  text-decoration:underline;
+.updateFood-btn {
+  background-color: rgb(13, 79, 150);
+}
+
+.deleteFood-btn {
+  background-color: rgb(187, 22, 118);
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-update, .tooltip-delete {
+  visibility: hidden;
+  width: 250px;
+  text-align: center;
+  font-weight: lighter;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  top: -5px;
+  right: 110%;
+  color: white;
+}
+
+.tooltip .tooltip-update {
+  background-color: rgb(13, 79, 150);
+}
+
+.tooltip .tooltip-delete {
+  background-color:rgb(187, 22, 118);
+}
+
+.tooltip:hover .tooltip-update, .tooltip:hover .tooltip-delete {
+  visibility: visible;
 }
 
 .footer {

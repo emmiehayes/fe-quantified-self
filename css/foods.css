@@ -133,6 +133,8 @@ button {
   background-color: rgb(187, 22, 118);
 }
 
+
+
 .tooltip {
   position: relative;
   display: inline-block;
@@ -161,6 +163,10 @@ button {
 
 .tooltip:hover .tooltip-update, .tooltip:hover .tooltip-delete {
   visibility: visible;
+}
+
+.deleteFood-btn:disabled {
+  background-color: rgb(134, 130, 133);
 }
 
 .footer {

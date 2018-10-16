@@ -79,7 +79,7 @@
 
 	var getFood = function getFood(foods) {
 	  return foods.forEach(function (food) {
-	    $('#food-list').append('\n    <article class="food-info">\n    <p class="name" contenteditable="false" id="name-' + food.id + '"=>' + food.name + '</p>\n    <p class="calories" contenteditable="false" id="calories-' + food.id + '"=>' + food.calories + '</p>\n    <div class="tooltip">\n      <button type="button" class="updateFood-btn" id="' + food.id + '">Edit</button>\n      <span class="tooltip-update">Click edit, click on field, make changes, click save.</span>\n    </div>\n    <div class="tooltip">\n      <button type="button" class="deleteFood-btn" id="' + food.id + '">Delete</button>\n     <span class="tooltip-delete">Food can only be deleted if it is not linked to a meal. Visit the meal page to remove from meals.</span>\n    </div>\n    ');
+	    $('#food-list').append('\n    <article id="food-info">\n    <p class="name" contenteditable="false" id="name-' + food.id + '"=>' + food.name + '</p>\n    <p class="calories" contenteditable="false" id="calories-' + food.id + '"=>' + food.calories + '</p>\n    <div class="tooltip">\n      <button type="button" class="updateFood-btn" id="' + food.id + '">Edit</button>\n      <span class="tooltip-update">Click edit, click on field, make changes, click save.</span>\n    </div>\n    <div class="tooltip">\n      <button type="button" class="deleteFood-btn" id="' + food.id + '">Delete</button>\n      <span class="tooltip-delete">Food can only be deleted if it is not linked to a meal. Visit the meal page to remove from meals.</span>\n    </div>\n    ');
 	  });
 	};
 
@@ -140,6 +140,14 @@
 	  };
 	};
 
+	// DELETE 
+	$("#food-info").on('click', '.deleteFood-btn', function (event) {
+	  debugger;
+	  var foodId = event.currentTarget.id;
+
+	  fetch('https://fast-meadow-36413.herokuapp.com//api/v1/foods/' + foodId + '/', { method: "DELETE" }).then(handleResponse).catch(errorLog);
+	});
+
 	// SEARCH
 	$('#search').keyup(function () {
 	  var letters = $('#search').val().toLowerCase();
@@ -173,7 +181,7 @@
 
 	var getAllMealsForButtons = function getAllMealsForButtons() {
 	  $('#meal-buttons').html('');
-	  fetch('https://rails-quantified-self.herokuapp.com/api/v1/meals').then(handleResponse).then(appendMealToButton).catch(errorLog);
+	  fetch('https://fast-meadow-36413.herokuapp.com/api/v1/meals').then(handleResponse).then(appendMealToButton).catch(errorLog);
 	};
 
 	var appendMealToButton = function appendMealToButton(meals) {

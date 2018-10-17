@@ -79,7 +79,7 @@
 
 	var getFood = function getFood(foods) {
 	  return foods.forEach(function (food) {
-	    $('#food-list').append('\n    <article id="food-info">\n    <p class="name" contenteditable="false" id="name-' + food.id + '"=>' + food.name + '</p>\n    <p class="calories" contenteditable="false" id="calories-' + food.id + '"=>' + food.calories + '</p>\n    <div class="tooltip">\n      <button type="button" class="updateFood-btn" id="' + food.id + '">Edit</button>\n      <span class="tooltip-update">Click edit, click on field, make changes, click save.</span>\n    </div>\n    <div class="tooltip">\n      <button type="button" class="deleteFood-btn" id="' + food.id + '">Delete</button>\n      <span class="tooltip-delete">Food can only be deleted if it is not linked to a meal. Visit the meal page to remove from meals.</span>\n    </div>\n    ');
+	    $('#food-list').append('\n    <article class="food-info">\n    <p class="name" contenteditable="false" id="name-' + food.id + '"=>' + food.name + '</p>\n    <p class="calories" contenteditable="false" id="calories-' + food.id + '"=>' + food.calories + '</p>\n    <div class="tooltip">\n      <button type="button" class="updateFood-btn" id="' + food.id + '">Edit</button>\n      <span class="tooltip-update">Click edit, click on field, make changes, click save.</span>\n    </div>\n    <div class="tooltip">\n      <button type="button" class="deleteFood-btn" id="' + food.id + '">Delete</button>\n      <span class="tooltip-delete">Food can only be deleted if it is not linked to a meal. Visit the meal page to remove from meals.</span>\n    </div>\n    ');
 	  });
 	};
 
@@ -119,6 +119,7 @@
 	    var updatedName = nameField.innerText;
 	    var updatedCals = caloriesField.innerText;
 	    patchFood(foodId, updatedName, updatedCals);
+	    clearInput();
 	  }
 	});
 
@@ -141,11 +142,10 @@
 	};
 
 	// DELETE 
-	$("#food-info").on('click', '.deleteFood-btn', function (event) {
-	  debugger;
+	$("#food-list").on('click', '.deleteFood-btn', function (event) {
 	  var foodId = event.currentTarget.id;
 
-	  fetch('https://fast-meadow-36413.herokuapp.com//api/v1/foods/' + foodId + '/', { method: "DELETE" }).then(handleResponse).catch(errorLog);
+	  fetch('https://fast-meadow-36413.herokuapp.com//api/v1/foods/' + foodId + '/', { method: "DELETE" }).then(getAllFoods).then(clearInput).catch(errorLog);
 	});
 
 	// SEARCH
@@ -205,6 +205,7 @@
 	  }
 	});
 
+	// POST
 	var postFoodsToMeal = function postFoodsToMeal(foodsChecked, mealId) {
 	  var length = foodsChecked.length;
 	  for (var i = 0; i < length; i++) {
@@ -216,32 +217,29 @@
 
 	// GET
 	var getDiaryMeals = function getDiaryMeals() {
-	  $('#meal-columns').html('');
+	  $('.meal-data').html('');
 	  fetch('https://fast-meadow-36413.herokuapp.com/api/v1/meals').then(handleResponse).then(getMealInfo).catch(errorLog);
 	};
 
 	var getMealInfo = function getMealInfo(meals) {
 	  return meals.forEach(function (meal) {
-	    $('#meal-columns').append('\n      <section class="meal-info">' + meal.name + '</section>\n    ');
+	    $('.meal-data').append('\n      <section class="meal-summary">\n        <p class="meal-title">' + meal.name + '</p>\n        <p>Total Calories:</p>\n        <div class="meal-columns"></div>\n      </section> \n    ');
 	    populateFoodsPerMeal(meal);
 	  });
 	};
 
 	var populateFoodsPerMeal = function populateFoodsPerMeal(meal) {
 	  return meal.foods.forEach(function (food) {
-	    $('.meal-info').append('\n    <article class="food-info">\n    <p class="name">' + food.name.substring(0, 8) + '</p>\n    <p class="calories">' + food.calories + '</p>\n    <p class="delete-btn" id=' + food.id + ' aria-label="Delete Food"><i class="fa fa-trash-o fa-lg" id=' + meal.id + '></i></p>\n    </article>\n    ');
+	    $('.meal-columns').append('\n      <article class="food-info">\n        <p class="name">' + food.name.substring(0, 8) + '</p>\n        <p id="calories">' + food.calories + '</p>\n        <p class="delete-btn" id=' + food.id + ' aria-label="Delete Food"><i class="fa fa-trash-o fa-lg" id=' + meal.id + '></i></p>\n      </article>\n    ');
 	  });
 	};
 
-	$("#meal-columns").on('click', '.delete-btn', function (event) {
+	// DELETE
+	$('.meal-data').on('click', '.delete-btn', function (event) {
 	  var foodId = event.currentTarget.id;
 	  var mealId = event.target.id;
-	  deleteMealFood(mealId, foodId);
+	  fetch('https://fast-meadow-36413.herokuapp.com/api/v1/meals/' + mealId + '/foods/' + foodId, { method: "DELETE" }).then(getDiaryMeals).catch(errorLog);
 	});
-
-	var deleteMealFood = function deleteMealFood(mealId, foodId) {
-	  fetch('https://fast-meadow-36413.herokuapp.com/api/v1/meals/' + mealId + '/foods/' + foodId, { method: "DELETE" }).then(handleResponse).then(getDiaryMeals).catch(errorLog);
-	};
 
 	getDiaryMeals();
 	getAllFoodsCheck();

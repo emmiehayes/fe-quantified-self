@@ -32,7 +32,7 @@ p {
 }
 
 .meal-title {
-  font-size: 25px;
+  font-size: 16px;
 }
 
 .meal-data {
@@ -54,7 +54,7 @@ p {
 }
 
 .meal-columns {
-  height: 350px;
+  height: 250px;
   overflow: scroll;
   padding: 5px;
   margin: 5px;

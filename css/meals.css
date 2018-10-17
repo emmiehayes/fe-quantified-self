@@ -37,14 +37,14 @@ div {
 h2 {
   font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
-  line-height: 17px;
+  line-height: 15px;
 }
 
 p {
   font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
   font-weight: bold;
-  line-height: 5px;
+  line-height: 12px;
 }
 
 .input {
@@ -110,7 +110,7 @@ p {
   background-color: rgba(131, 195, 238, 0.651);
   cursor: pointer;
   width: 150px;
-  height: 60px;
+  height: 50px;
   margin: 5px;
   border-style: solid;
   border-color: rgb(120, 189, 235);

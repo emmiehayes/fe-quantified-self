@@ -105,12 +105,15 @@ p {
 .meal-name-btn {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 15px;
-  color: #ffffff;
-  background-color: #3f9de6c4;
+  font-weight: bold;
+  color: black;
+  background-color: rgba(131, 195, 238, 0.651);
   cursor: pointer;
   width: 150px;
   height: 60px;
   margin: 5px;
+  border-style: solid;
+  border-color: rgb(120, 189, 235);
 }
 
 .meal-name-btn:hover {

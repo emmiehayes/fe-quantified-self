@@ -25,21 +25,39 @@ div {
   background-position: center;
 }
 
-#list-meals {
-  height: 400px;
-  columns: 5;
-  margin-left: 300px;
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 15px;
+}
+
+.meal-title {
+  font-size: 25px;
+}
+
+.meal-data {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  background-color: rgba(131, 195, 238, 0.534);
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  margin: 50px;
+  columns: 4;
+  border-style: solid;
+  border-color: rgb(120, 189, 235);
+}
+
+.meal_summary {
+  font-size: 14px;
 }
 
 .meal-columns {
-  font-weight: bold;
-}
-
-.meal-info {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: bold;
-  height: 400px;
+  height: 350px;
   overflow: scroll;
+  padding: 5px;
+  margin: 5px;
 }
 
 .food-info {

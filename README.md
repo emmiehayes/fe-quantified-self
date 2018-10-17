@@ -1,6 +1,6 @@
 # QUANTIFIED SELF (Front-End)
 
-<img alt="root_screen" src="https://cl.ly/1b9324d92bf7/Screen%20Shot%202018-10-16%20at%209.03.35%20PM.jpg">
+<img alt="root_screen" src="https://cl.ly/b20b6c87337d/Screen%20Shot%202018-10-16%20at%2010.35.44%20PM.jpg">
 
 FE-Quantifed-Self is the front-end app for an Express API back-end.  
 This was a solo project that I completed in just under 2 weeks in the following iterations: 

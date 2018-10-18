@@ -126,7 +126,7 @@
 	var patchFood = function patchFood(foodId, updatedName, updatedCals) {
 	  var body = { food: { name: updatedName, calories: updatedCals } };
 
-	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods' + foodId + '/', patchPayload(body)).then(function (response) {
+	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods/' + foodId, patchPayload(body)).then(function (response) {
 	    return handleResponse(response);
 	  }).catch(function (error) {
 	    return console.error({ error: error });
@@ -145,7 +145,7 @@
 	$("#food-list").on('click', '.deleteFood-btn', function (event) {
 	  var foodId = event.currentTarget.id;
 
-	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods' + foodId + '/', { method: "DELETE" }).then(getAllFoods).then(clearInput).catch(errorLog);
+	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods/' + foodId, { method: "DELETE" }).then(getAllFoods).then(clearInput).catch(errorLog);
 	});
 
 	// SEARCH
@@ -170,7 +170,7 @@
 	// GET
 	var getAllFoodsCheck = function getAllFoodsCheck() {
 	  $('#allFoods').html('');
-	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods`').then(handleResponse).then(appendFoodToList).catch(errorLog);
+	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods').then(handleResponse).then(appendFoodToList).catch(errorLog);
 	};
 
 	var appendFoodToList = function appendFoodToList(foods) {

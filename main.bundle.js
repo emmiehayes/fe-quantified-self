@@ -74,7 +74,7 @@
 	// GET 
 	var getAllFoods = function getAllFoods() {
 	  $('#food-list').html('');
-	  fetch('https://fast-meadow-36413.herokuapp.com/api/v1/foods').then(handleResponse).then(getFood).catch(errorLog);
+	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods').then(handleResponse).then(getFood).catch(errorLog);
 	};
 
 	var getFood = function getFood(foods) {
@@ -89,7 +89,7 @@
 	  var newFoodCalories = $('#newfoodCalories').val();
 	  var body = { food: { name: newFoodName, calories: newFoodCalories } };
 
-	  fetch('https://fast-meadow-36413.herokuapp.com/api/v1/foods', postPayload(body)).then(handleResponse).then(getAllFoods).then(clearInput).catch(errorLog);
+	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods', postPayload(body)).then(handleResponse).then(getAllFoods).then(clearInput).catch(errorLog);
 	};
 
 	var postPayload = function postPayload(body) {
@@ -126,7 +126,7 @@
 	var patchFood = function patchFood(foodId, updatedName, updatedCals) {
 	  var body = { food: { name: updatedName, calories: updatedCals } };
 
-	  fetch('https://fast-meadow-36413.herokuapp.com/api/v1/foods/' + foodId, patchPayload(body)).then(function (response) {
+	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods/' + foodId, patchPayload(body)).then(function (response) {
 	    return handleResponse(response);
 	  }).catch(function (error) {
 	    return console.error({ error: error });
@@ -145,7 +145,7 @@
 	$("#food-list").on('click', '.deleteFood-btn', function (event) {
 	  var foodId = event.currentTarget.id;
 
-	  fetch('https://fast-meadow-36413.herokuapp.com/api/v1/foods/' + foodId, { method: "DELETE" }).then(getAllFoods).then(clearInput).catch(errorLog);
+	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods/' + foodId, { method: "DELETE" }).then(getAllFoods).then(clearInput).catch(errorLog);
 	});
 
 	// SEARCH
@@ -170,7 +170,7 @@
 	// GET
 	var getAllFoodsCheck = function getAllFoodsCheck() {
 	  $('#allFoods').html('');
-	  fetch('https://fast-meadow-36413.herokuapp.com/api/v1/foods').then(handleResponse).then(appendFoodToList).catch(errorLog);
+	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods').then(handleResponse).then(appendFoodToList).catch(errorLog);
 	};
 
 	var appendFoodToList = function appendFoodToList(foods) {
@@ -181,7 +181,7 @@
 
 	var getAllMealsForButtons = function getAllMealsForButtons() {
 	  $('#meal-buttons').html('');
-	  fetch('https://fast-meadow-36413.herokuapp.com/api/v1/meals').then(handleResponse).then(appendMealToButton).catch(errorLog);
+	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/meals').then(handleResponse).then(appendMealToButton).catch(errorLog);
 	};
 
 	var appendMealToButton = function appendMealToButton(meals) {
@@ -209,7 +209,7 @@
 	var postFoodsToMeal = function postFoodsToMeal(foodsChecked, mealId) {
 	  var length = foodsChecked.length;
 	  for (var i = 0; i < length; i++) {
-	    fetch('https://fast-meadow-36413.herokuapp.com/api/v1/meals/' + mealId + '/foods/' + foodsChecked[i], { method: "POST" }).then(handleResponse).catch(errorLog);
+	    fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/meals/' + mealId + '/foods/' + foodsChecked[i], { method: "POST" }).then(handleResponse).catch(errorLog);
 	  }
 	};
 
@@ -218,7 +218,7 @@
 	// GET
 	var getDiaryMeals = function getDiaryMeals() {
 	  $('.meal-data').html('');
-	  fetch('https://fast-meadow-36413.herokuapp.com/api/v1/meals').then(handleResponse).then(getMealInfo).catch(errorLog);
+	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/meals').then(handleResponse).then(getMealInfo).catch(errorLog);
 	};
 
 	var getMealInfo = function getMealInfo(meals) {
@@ -238,7 +238,7 @@
 	$('.meal-data').on('click', '.delete-btn', function (event) {
 	  var foodId = event.currentTarget.id;
 	  var mealId = event.target.id;
-	  fetch('https://fast-meadow-36413.herokuapp.com/api/v1/meals/' + mealId + '/foods/' + foodId, { method: "DELETE" }).then(getDiaryMeals).catch(errorLog);
+	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/meals/' + mealId + '/foods/' + foodId, { method: "DELETE" }).then(getDiaryMeals).catch(errorLog);
 	});
 
 	getDiaryMeals();

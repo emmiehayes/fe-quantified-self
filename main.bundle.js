@@ -87,8 +87,9 @@
 	var postFood = function postFood() {
 	  var newFoodName = $('#newfoodName').val();
 	  var newFoodCalories = $('#newfoodCalories').val();
+	  var newFoodInfo = { "name": newFoodName, "calories": newFoodCalories };
 
-	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods', postPayload(newFoodName, newFoodCalories)).then(handleResponse).then(getAllFoods).then(clearInput).catch(errorLog);
+	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods', postPayload(newFoodInfo)).then(handleResponse).then(getAllFoods).then(clearInput).catch(errorLog);
 	};
 
 	var postPayload = function postPayload(body) {

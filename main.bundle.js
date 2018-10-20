@@ -220,10 +220,7 @@
 	var postMealFoodPayload = function postMealFoodPayload(foodId, mealId) {
 	  return {
 	    method: 'POST',
-	    headers: {
-	      'Accept': 'application/json',
-	      'Content-Type': 'application/json'
-	    },
+	    headers: { 'Content-Type': 'application/json' },
 	    body: JSON.stringify({
 	      food_id: foodId,
 	      meal_id: mealId

@@ -87,7 +87,7 @@
 	var postFood = function postFood() {
 	  var newFoodName = $('#newfoodName').val();
 	  var newFoodCalories = $('#newfoodCalories').val();
-	  var newFoodInfo = { "name": newFoodName, "calories": newFoodCalories };
+	  var newFoodInfo = { name: newFoodName, calories: newFoodCalories };
 
 	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods', postPayload(newFoodInfo)).then(handleResponse).then(getAllFoods).then(clearInput).catch(errorLog);
 	};
@@ -95,7 +95,10 @@
 	var postPayload = function postPayload(body) {
 	  return {
 	    method: 'POST',
-	    headers: { 'Content-Type': 'application/json' },
+	    headers: {
+	      'Accept': 'application/json',
+	      'Content-Type': 'application/json'
+	    },
 	    body: JSON.stringify(body)
 	  };
 	};
@@ -124,7 +127,7 @@
 	});
 
 	var patchFood = function patchFood(foodId, updatedName, updatedCals) {
-	  var body = { food: { name: updatedName, calories: updatedCals } };
+	  var body = { name: updatedName, calories: updatedCals };
 
 	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods/' + foodId, patchPayload(body)).then(function (response) {
 	    return handleResponse(response);
@@ -135,7 +138,7 @@
 
 	var patchPayload = function patchPayload(body) {
 	  return {
-	    method: 'PUT',
+	    method: 'PATCH',
 	    headers: { 'Content-Type': 'application/json' },
 	    body: JSON.stringify(body)
 	  };

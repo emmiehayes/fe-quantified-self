@@ -247,7 +247,6 @@
 	getAllFoods();
 	getAllMealsForButtons();
 	getDiaryMeals();
-	getAllFoodsCheck();
 
 /***/ })
 /******/ ]);

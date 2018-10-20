@@ -46,7 +46,6 @@
 
 	'use strict';
 
-	// -------------------------------------------------------------------- HELPER FUNCTIONS
 	var clearInput = function clearInput() {
 	  $('.input').val('');
 	};
@@ -71,7 +70,7 @@
 
 	// -------------------------------------------------------------------- FOOD.HTML PAGE 
 
-	// GET 
+	// GET FOODS
 	var getAllFoods = function getAllFoods() {
 	  $('#food-list').html('');
 	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods').then(handleResponse).then(getFood).catch(errorLog);
@@ -79,11 +78,13 @@
 
 	var getFood = function getFood(foods) {
 	  return foods.forEach(function (food) {
-	    $('#food-list').append('\n    <article class="food-info">\n    <p class="name" contenteditable="false" id="name-' + food.id + '"=>' + food.name + '</p>\n    <p class="calories" contenteditable="false" id="calories-' + food.id + '"=>' + food.calories + '</p>\n    <div class="tooltip">\n      <button type="button" class="updateFood-btn" id="' + food.id + '">Edit</button>\n      <span class="tooltip-update">Click edit, click on field, make changes, click save.</span>\n    </div>\n    <div class="tooltip">\n      <button type="button" class="deleteFood-btn" id="' + food.id + '">Delete</button>\n      <span class="tooltip-delete">Food can only be deleted if it is not linked to a meal. Visit the meal page to remove from meals.</span>\n    </div>\n    ');
+	    $("#food-list").append('\n    <article class="food-info">\n    <p class="name" contenteditable="false" id="name-' + food.id + '"=>' + food.name + '</p>\n    <p class="calories" contenteditable="false" id="calories-' + food.id + '"=>' + food.calories + '</p>\n    <p id="' + food.id + '" class="updateFood-btn"><i class="fa fa-pencil fa-lg"></i></p>\n    <p id="' + food.id + '" class="deleteFood-btn"><i class="fa fa-trash fa-lg"></i></p>\n    <label class="box">\n      <input type="checkbox" id="' + food.id + '">\n        <span class="checkmark"></span>\n    </label>\n  \n    ');
 	  });
 	};
 
-	// POST 
+	// POST FOOD
+	$("#add-food-btn").on("click", postFood);
+
 	var postFood = function postFood() {
 	  var newFoodName = $('#newfoodName').val();
 	  var newFoodCalories = $('#newfoodCalories').val();
@@ -103,19 +104,19 @@
 	  };
 	};
 
-	// PATCH 
+	// PATCH FOOD
 	$("#food-list").on('click', '.updateFood-btn', function (event) {
 	  var foodId = event.currentTarget.id;
 	  var nameField = document.getElementById('name-' + foodId);
 	  var caloriesField = document.getElementById('calories-' + foodId);
 	  var buttonText = document.getElementById('' + foodId).innerHTML;
 
-	  if (buttonText == "Edit") {
+	  if (buttonText != "Save") {
 	    document.getElementById('' + foodId).innerHTML = "Save";
 	    nameField.contentEditable = "true";
 	    caloriesField.contentEditable = "true";
-	  } else if (buttonText == "Save") {
-	    document.getElementById('' + foodId).innerHTML = "Edit";
+	  } else {
+	    document.getElementById('' + foodId).innerHTML = '<i class="fa fa-pencil" />';
 	    nameField.contentEditable = "false";
 	    caloriesField.contentEditable = "false";
 
@@ -144,14 +145,14 @@
 	  };
 	};
 
-	// DELETE 
+	// DELETE FOOD
 	$("#food-list").on('click', '.deleteFood-btn', function (event) {
 	  var foodId = event.currentTarget.id;
 
 	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods/' + foodId, { method: "DELETE" }).then(getAllFoods).then(clearInput).catch(errorLog);
 	});
 
-	// SEARCH
+	// SEARCH FOOD
 	$('#search').keyup(function () {
 	  var letters = $('#search').val().toLowerCase();
 	  $('.food-info').each(function () {
@@ -164,24 +165,7 @@
 	  });
 	});
 
-	// EVENTS
-	getAllFoods();
-	$('#add-food-btn').on('click', postFood);
-
-	// -------------------------------------------------------------------- MEAL.HTML PAGE 
-
-	// GET
-	var getAllFoodsCheck = function getAllFoodsCheck() {
-	  $('#allFoods').html('');
-	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/foods').then(handleResponse).then(appendFoodToList).catch(errorLog);
-	};
-
-	var appendFoodToList = function appendFoodToList(foods) {
-	  return foods.forEach(function (food) {
-	    $('#food-list-for-meals').append('\n      <div class="food-info">\n      <p class="name">' + food.name + '</p>\n      <p class="calories">' + food.calories + '</p>\n      <input type="checkbox" class="food-chk" id="' + food.id + '">\n    ');
-	  });
-	};
-
+	// GET MEALS
 	var getAllMealsForButtons = function getAllMealsForButtons() {
 	  $('#meal-buttons').html('');
 	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/meals').then(handleResponse).then(appendMealToButton).catch(errorLog);
@@ -201,14 +185,14 @@
 	  var foodsChecked = $(":checkbox:checked").map(foodId).get();
 
 	  if (foodsChecked.length > 0) {
-	    alert("Check your diary to see the updates!");
 	    postFoodsToMeal(foodsChecked, mealId);
+	    window.open("diary.html");
 	  } else {
 	    alert("You must select a food first.");
 	  }
 	});
 
-	// POST
+	// POST FOOD TO MEAL
 	var postFoodsToMeal = function postFoodsToMeal(foodsChecked, mealId) {
 	  var length = foodsChecked.length;
 	  for (var i = 0; i < length; i++) {
@@ -233,7 +217,7 @@
 
 	// -------------------------------------------------------------------- DIARY.HTML PAGE 
 
-	// GET
+	// GET MEALS WITH FOODS
 	var getDiaryMeals = function getDiaryMeals() {
 	  $('.meal-data').html('');
 	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/meals').then(handleResponse).then(getMealInfo).catch(errorLog);
@@ -248,20 +232,21 @@
 
 	var populateFoodsPerMeal = function populateFoodsPerMeal(meal) {
 	  return meal.foods.forEach(function (food) {
-	    $('.meal-columns').append('\n      <article class="food-info">\n        <p class="name">' + food.name.substring(0, 8) + '</p>\n        <p id="calories">' + food.calories + '</p>\n        <p class="delete-btn" id=' + food.id + ' aria-label="Delete Food"><i class="fa fa-trash-o fa-lg" id=' + meal.id + '></i></p>\n      </article>\n    ');
+	    $(".meal-columns").append('\n      <article class="food-info">\n        <h3 class="name">' + food.name.substring(0, 8) + '</h3>\n        <h3 id="calories">' + food.calories + '</h3>\n        <p id="' + food.id + '" class="deleteFood-btn"><i class="fa fa-trash fa-lg"></i></p>\n      </article>\n    ');
 	  });
 	};
 
-	// DELETE
-	$('.meal-data').on('click', '.delete-btn', function (event) {
+	// DELETE FOOD FROM MEAL ONLY
+	$('.meal-data').on('click', '.deleteFood-btn', function (event) {
 	  var foodId = event.currentTarget.id;
 	  var mealId = event.target.id;
 	  fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/meals/' + mealId + '/foods/' + foodId, { method: "DELETE" }).then(getDiaryMeals).catch(errorLog);
 	});
 
+	getAllFoods();
+	getAllMealsForButtons();
 	getDiaryMeals();
 	getAllFoodsCheck();
-	getAllMealsForButtons();
 
 /***/ })
 /******/ ]);

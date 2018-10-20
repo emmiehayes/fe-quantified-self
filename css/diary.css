@@ -32,21 +32,19 @@ p {
 }
 
 .meal-title {
-  font-size: 16px;
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 23px;
 }
 
 .meal-data {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   display: inline-block;
-  background-color: rgba(131, 195, 238, 0.534);
   align-items: center;
   width: 80%;
   height: 80%;
   margin: 50px;
   columns: 4;
-  border-style: solid;
-  border-color: rgb(120, 189, 235);
 }
 
 .meal_summary {
@@ -67,19 +65,21 @@ p {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 12px;
   background-color: #ffffff60;
+  border: 1px solid;
+  border-color: black;
   padding: 5px;
   margin: 5px;
 }
 
 .name {
-  width: 75px;
+  width: 70px;
 }
 
 .calories {
-  width: 50px;
+  width: 30px;
 }
 
-.delete-btn {
+.deleteFood-btn {
   color: rgb(198, 41, 101);
   cursor: pointer;
   width: 30px;

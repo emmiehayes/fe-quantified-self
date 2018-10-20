@@ -17,19 +17,22 @@
     </nav>
     <div class="hero">
       <div class="container">
-        <div class="create-form">
+        <div id="create-form">
           <input type="string" class="input" id="newfoodName" placeholder="Enter food name">
-          <input type="number" class="input" id="newfoodCalories" placeholder="Enter calorie amount"><br>
-          <input type="button" class="button" id="add-food-btn" value="Add Food">
+          <input type="number" class="input" id="newfoodCalories" placeholder="Enter calories">
+          <input type="button" class="button" id="add-food-btn" value="Create Food">
         </div>
-        <div class="interactive-list">
-          <input type="text" class="input" id="search" placeholder="Filter foods by name"><i id="searchIcon" class="fa fa-search"></i>
-          <header id="list-title">
-            <h2>MY FOOD LIST</h2>
-            <p><strong>SCROLL TO SEE FOOD NAMES AND CALORIE COUNT</strong></p>
-          </header>
+        <div id="interactive-list">
+            <h4>SCROLL OR FILTER TO FIND FOOD(S) TO ADD TO A MEAL</h4>
+          <input type="text" class="input" id="search" placeholder="Search Foods"><i id="searchIcon" class="fa fa-search"></i>
           <div id="food-list">
             <!-- Append -->
+          </div>
+          <h4>SELECT THE MEAL TO ADD THE FOOD(S)</h4>
+          <div id="meal-buttons">
+            <div id="meal">
+              <!-- Append -->
+            </div>
           </div>
         </div>
       </div>
@@ -41,9 +44,6 @@
         </li>
         <li>
           <a href="foods.html">Foods</a>
-        </li>
-        <li>
-          <a href="meals.html">Meals</a>
         </li>
         <li>
           <a href="diary.html">Diary</a>

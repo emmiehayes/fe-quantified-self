@@ -34,49 +34,53 @@ h1 {
   height: 70vh;
 }
 
+#create-form {
+  margin: 5px;
+}
+
+#interactive-list {
+  height: 60vh;
+}
+
 .input {
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #ffffff7c;
   font-size: 18px;
   text-align: center;
-  width: 300px;
-  height: 40px;
+  border-radius: 10px;
+  width: 165px;
+  height: 30px;
+}
+
+#search {
+  margin: 5px;
 }
 
 #add-food-btn {
   font-family: 'Source Sans Pro', sans-serif;
 	font-size: 15px;
   color: #ffffff;
-  background-color: #148138;
-	border-radius: 28px;
+  background-color: #199c45;
 	cursor: pointer;
-  width: 215px;
+  width: 175px;
+  border-radius: 10px;
   height: 40px;
-  margin: 15px;
 }
 
 #add-food-btn:hover {
   text-decoration:underline;
 }
 
+h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  line-height: 10px;
+}
+
 #searchIcon {
   position: relative;
-  right: 300px;
+  right: 165px;
   color: #7B7B7B;
-}
-
-h2 {
-  font-family: 'Source Sans Pro', sans-serif;
-  text-align: center;
-  line-height: 17px;
-  margin-top: 30px;
-}
-
-p {
-  font-family: 'Source Sans Pro', sans-serif;
-  text-align: center;
-  font-weight: bold;
-  line-height: 5px;
 }
 
 #food-list {
@@ -109,62 +113,108 @@ p {
   width: 150px;
 }
 
+.name:focus { 
+  outline: none; 
+}
+
 .calories {
   text-align: left;
   width: 100px;
 }
 
-button {
-  font-family: 'Source Sans Pro', sans-serif;
-	font-size: 12px;
-  border-radius: 28px;
-  color: white;
+.calories:focus { 
+  outline: none; 
+}
+
+.deleteFood-btn, .updateFood-btn, .mealDropDown-btn {
   cursor: pointer;
-  width: 70px;
-  height: 30px;
-  margin: 2px;
+  width: 30px;
+}
+
+.deleteFood-btn {
+  color: rgb(198, 41, 101);
+  margin: 5px;
 }
 
 .updateFood-btn {
-  background-color: rgb(13, 79, 150);
-} 
-
-.deleteFood-btn {
-  background-color: rgb(187, 22, 118);
+  color: rgb(41, 109, 198);
+  margin: 5px;
 }
 
-.tooltip {
+.box {
   position: relative;
-  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-.tooltip .tooltip-update, .tooltip-delete {
-  visibility: hidden;
-  width: 250px;
-  text-align: center;
-  font-weight: lighter;
-  border-radius: 6px;
-  padding: 5px 0;
+.box input {
   position: absolute;
-  top: -5px;
-  right: 110%;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(189, 185, 185);
+}
+
+.box:hover input ~ .checkmark {
+  background-color: rgb(25, 197, 97);
+}
+
+.box input:checked ~ .checkmark {
+  background-color: rgb(25, 197, 97);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.box input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.box .checkmark:after {
+  left: 9px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid rgba(255, 255, 255, 0.808);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#meal-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.meal-name-btn {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
   color: white;
+  background-color:  rgb(41, 109, 198);
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  margin: 5px;
+  border-style: solid;
+  border-color: rgb(120, 189, 235);
 }
 
-.tooltip .tooltip-update {
-  background-color: rgb(13, 79, 150);
-}
-
-.tooltip .tooltip-delete {
-  background-color:rgb(187, 22, 118);
-}
-
-.tooltip:hover .tooltip-update, .tooltip:hover .tooltip-delete {
-  visibility: visible;
-}
-
-.deleteFood-btn:disabled {
-  background-color: rgb(134, 130, 133);
+.meal-name-btn:hover {
+  text-decoration:underline;
 }
 
 .footer {

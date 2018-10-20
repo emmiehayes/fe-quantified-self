@@ -200,7 +200,7 @@
 	  };
 	  var foodsChecked = $(":checkbox:checked").map(foodId).get();
 
-	  if (foodsChecked.length != 0) {
+	  if (foodsChecked.length > 0) {
 	    alert("Check your diary to see the updates!");
 	    postFoodsToMeal(foodsChecked, mealId);
 	  } else {
@@ -212,8 +212,23 @@
 	var postFoodsToMeal = function postFoodsToMeal(foodsChecked, mealId) {
 	  var length = foodsChecked.length;
 	  for (var i = 0; i < length; i++) {
-	    fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/meals/' + mealId + '/foods/' + foodsChecked[i], { method: "POST" }).then(handleResponse).catch(errorLog);
+	    var foodId = foodsChecked[i];
+	    fetch('https://limitless-everglades-18138.herokuapp.com/api/v1/meals/' + mealId + '/foods/' + foodId, postMealFoodPayload(mealId, foodId)).then(handleResponse).catch(errorLog);
 	  }
+	};
+
+	var postMealFoodPayload = function postMealFoodPayload(foodId, mealId) {
+	  return {
+	    method: 'POST',
+	    headers: {
+	      'Accept': 'application/json',
+	      'Content-Type': 'application/json'
+	    },
+	    body: JSON.stringify({
+	      food_id: foodId,
+	      meal_id: mealId
+	    })
+	  };
 	};
 
 	// -------------------------------------------------------------------- DIARY.HTML PAGE 

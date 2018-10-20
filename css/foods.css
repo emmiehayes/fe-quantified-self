@@ -127,13 +127,11 @@ button {
 
 .updateFood-btn {
   background-color: rgb(13, 79, 150);
-}
+} 
 
 .deleteFood-btn {
   background-color: rgb(187, 22, 118);
 }
-
-
 
 .tooltip {
   position: relative;

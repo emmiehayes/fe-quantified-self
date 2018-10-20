@@ -83,7 +83,6 @@
 	};
 
 	// POST FOOD
-	$("#add-food-btn").on("click", postFood);
 
 	var postFood = function postFood() {
 	  var newFoodName = $('#newfoodName').val();
@@ -103,6 +102,8 @@
 	    body: JSON.stringify(body)
 	  };
 	};
+
+	$("#add-food-btn").on("click", postFood);
 
 	// PATCH FOOD
 	$("#food-list").on('click', '.updateFood-btn', function (event) {
@@ -173,7 +174,7 @@
 
 	var appendMealToButton = function appendMealToButton(meals) {
 	  return meals.forEach(function (meal) {
-	    $('#meal-buttons').append('\n     <div id="meal">\n      <input type="submit" class="meal-name-btn" id=' + meal.id + ' value=' + meal.name + '>\n      </div> \n    ');
+	    $('#meal-buttons').append('\n    <div id="meal">\n    <input type="submit" class="meal-name-btn" id=' + meal.id + ' value=' + meal.name + '>\n    </div> \n    ');
 	  });
 	};
 

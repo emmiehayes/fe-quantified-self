@@ -42,9 +42,15 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	var _config = __webpack_require__(1);
+
+	var _config2 = _interopRequireDefault(_config);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var clearInput = function clearInput() {
 	  $('.input').val('');
@@ -264,8 +270,8 @@
 
 	var fetchRecipes = function fetchRecipes(foodsChecked) {
 	  recipeView();
-	  var YUMMLY_API_KEY = config.YUMMLY_API_KEY;
-	  var YUMMLY_APP_ID = config.YUMMLY_APP_ID;
+	  var YUMMLY_API_KEY = _config2.default.YUMMLY_API_KEY;
+	  var YUMMLY_APP_ID = _config2.default.YUMMLY_APP_ID;
 
 	  var formatChecked = foodsChecked.join("+");
 	  fetch('http://api.yummly.com/v1/api/recipes?_app_id=' + YUMMLY_APP_ID + '&_app_key=' + YUMMLY_API_KEY + '&requirePictures=true&q=' + formatChecked + '&maxResult=5').then(handleResponse).then(populateRecipes).catch(errorLog);
@@ -282,6 +288,17 @@
 	$('#back-button').click(function () {
 	  location.reload();
 	});
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+	"use strict";
+
+	module.exports = {
+	  YUMMLY_API_KEY: "37a7491a5d0776a412be1c34cc854ea3",
+	  YUMMLY_APP_ID: "7a7e1f0d"
+	};
 
 /***/ })
 /******/ ]);

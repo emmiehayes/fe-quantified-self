@@ -7,22 +7,205 @@ nav {
   height: 90px;
 }
 
+div {
+  text-align: center;
+}
+
 h1 {
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 50px;
   text-align: center;
 }
 
+h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+}
+
+h5 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+}
+
 .hero {
   width: 100vw;
   height: 70vh;
-  background-image: url('https://cl.ly/022a164f375b/Screen%20Shot%202018-10-09%20at%2010.43.34%20AM.jpg');
+  background-image: url('https://cl.ly/a226d70aba81/Screen%20Shot%202018-10-08%20at%207.29.56%20PM.jpg');
   background-size: cover;
   background-position: center;
 }
 
-div {
-  text-align: center;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 70vh;
+}
+
+.recipe-data {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff60;
+  border: 1px solid;
+  border-color: black;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.recipe-summary {
+  margin: 16px;
+}
+
+.recipe-title {
+  width: 180px;
+}
+
+#recipes-button {
+  font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+  color: #ffffff;
+  background-color: #199c45;
+	cursor: pointer;
+  width: 105px;
+  border-radius: 10px;
+  height: 40px;
+  margin: 10px;
+}
+
+#recipes-button:hover {
+  text-decoration:underline;
+}
+
+#back-button {
+  font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+  color: #ffffff;
+  background-color: #9c196a;
+	cursor: pointer;
+  width: 150px;
+  border-radius: 10px;
+  height: 40px;
+  margin: 10px;
+}
+
+.back-button:hover {
+  text-decoration:underline;
+}
+
+#food-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: scroll;
+  height: 230px;
+}
+
+.food-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #ffffff60;
+  border: 1px solid;
+  border-color: black;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 25px;
+  margin: 3px;
+}
+
+.name {
+  text-transform: capitalize;
+  text-align: left;
+  width: 150px;
+}
+
+.name:focus { 
+  outline: none; 
+}
+
+.calories {
+  text-align: left;
+  width: 100px;
+}
+
+.calories:focus { 
+  outline: none; 
+}
+
+.deleteFood-btn, .updateFood-btn, .mealDropDown-btn {
+  cursor: pointer;
+  width: 30px;
+}
+
+.deleteFood-btn {
+  color: rgb(198, 41, 101);
+  margin: 5px;
+}
+
+.updateFood-btn {
+  color: rgb(41, 109, 198);
+  margin: 5px;
+}
+
+.box {
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(189, 185, 185);
+}
+
+.box:hover input ~ .checkmark {
+  background-color: rgb(25, 197, 97);
+}
+
+.box input:checked ~ .checkmark {
+  background-color: rgb(25, 197, 97);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.box input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.box .checkmark:after {
+  left: 9px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid rgba(255, 255, 255, 0.808);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .footer {

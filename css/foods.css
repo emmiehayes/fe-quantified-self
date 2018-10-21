@@ -18,7 +18,7 @@ h1 {
 }
 
 .hero {
-  background-image: url('https://cl.ly/a226d70aba81/Screen%20Shot%202018-10-08%20at%207.29.56%20PM.jpg');
+  background-image: url('https://cl.ly/8245d1eed25e/Screen%20Shot%202018-10-20%20at%204.41.25%20PM.jpg');
   background-size: cover;
   background-position: center;
   width: 100vw;
@@ -32,6 +32,14 @@ h1 {
   align-items: center;
   width: 100vw;
   height: 70vh;
+}
+
+#containerRecipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100vw;
+  height: 30vh;
 }
 
 #create-form {
@@ -62,7 +70,7 @@ h1 {
   color: #ffffff;
   background-color: #199c45;
 	cursor: pointer;
-  width: 175px;
+  width: 105px;
   border-radius: 10px;
   height: 40px;
 }

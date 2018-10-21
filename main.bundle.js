@@ -68,8 +68,6 @@
 	  console.error({ error: error });
 	};
 
-	// -------------------------------------------------------------------- FOOD.HTML PAGE 
-
 	// GET FOODS
 	var getAllFoods = function getAllFoods() {
 	  $('#food-list').html('');
@@ -78,12 +76,11 @@
 
 	var getFood = function getFood(foods) {
 	  return foods.forEach(function (food) {
-	    $("#food-list").append('\n    <article class="food-info">\n    <p class="name" contenteditable="false" id="name-' + food.id + '"=>' + food.name + '</p>\n    <p class="calories" contenteditable="false" id="calories-' + food.id + '"=>' + food.calories + '</p>\n    <p id="' + food.id + '" class="updateFood-btn"><i class="fa fa-pencil fa-lg"></i></p>\n    <p id="' + food.id + '" class="deleteFood-btn"><i class="fa fa-trash fa-lg"></i></p>\n    <label class="box">\n      <input type="checkbox" id="' + food.id + '">\n        <span class="checkmark"></span>\n    </label>\n  \n    ');
+	    $("#food-list").append('\n    <article class="food-info">\n    <p class="name" contenteditable="false" id="name-' + food.id + '"=>' + food.name + '</p>\n    <p class="calories" contenteditable="false" id="calories-' + food.id + '"=>' + food.calories + '</p>\n    <p id="' + food.id + '" class="updateFood-btn"><i class="fa fa-pencil fa-lg"></i></p>\n    <p id="' + food.id + '" class="deleteFood-btn"><i class="fa fa-trash fa-lg"></i></p>\n    <label class="box">\n      <input type="checkbox" class="' + food.name + '"id="' + food.id + '">\n        <span class="checkmark"></span>\n    </label>\n    ');
 	  });
 	};
 
 	// POST FOOD
-
 	var postFood = function postFood() {
 	  var newFoodName = $('#newfoodName').val();
 	  var newFoodCalories = $('#newfoodCalories').val();
@@ -174,7 +171,7 @@
 
 	var appendMealToButton = function appendMealToButton(meals) {
 	  return meals.forEach(function (meal) {
-	    $('#meal-buttons').append('\n    <div id="meal">\n    <input type="submit" class="meal-name-btn" id=' + meal.id + ' value=' + meal.name + '>\n    </div> \n    ');
+	    $("#meal-buttons").append('\n    <div id="meal">\n    <input type="submit" class="meal-name-btn" id=' + meal.id + ' value=' + meal.name + '>\n    </div>\n    ');
 	  });
 	};
 
@@ -216,8 +213,6 @@
 	  };
 	};
 
-	// -------------------------------------------------------------------- DIARY.HTML PAGE 
-
 	// GET MEALS WITH FOODS
 	var getDiaryMeals = function getDiaryMeals() {
 	  $('.meal-data').html('');
@@ -247,6 +242,46 @@
 	getAllFoods();
 	getAllMealsForButtons();
 	getDiaryMeals();
+
+	// GET RECIPES
+	$("#interactive-list").on('click', '.recipe-btn', function (event) {
+	  var foodName = function foodName() {
+	    return this.className;
+	  };
+	  var foodsChecked = $(":checkbox:checked").map(foodName).get();
+
+	  if (foodsChecked.length > 0) {
+	    fetchRecipes(foodsChecked);
+	  }
+	});
+
+	var recipeView = function recipeView() {
+	  $('#food-list').hide();
+	  $('#recipes-button').hide();
+	  $("#back-button").show();
+	  document.getElementById('instruction').innerHTML = "Click the recipe's image to view details";
+	};
+
+	var fetchRecipes = function fetchRecipes(foodsChecked) {
+	  recipeView();
+	  var YUMMLY_API_KEY = config.YUMMLY_API_KEY;
+	  var YUMMLY_APP_ID = config.YUMMLY_APP_ID;
+
+	  var formatChecked = foodsChecked.join("+");
+	  fetch('http://api.yummly.com/v1/api/recipes?_app_id=' + YUMMLY_APP_ID + '&_app_key=' + YUMMLY_API_KEY + '&requirePictures=true&q=' + formatChecked + '&maxResult=5').then(handleResponse).then(populateRecipes).catch(errorLog);
+	};
+
+	var populateRecipes = function populateRecipes(recipes) {
+	  return recipes.matches.forEach(function (recipe) {
+	    $(".recipe-data").append('\n      <section class="recipe-summary">\n        <h5 class="recipe-title">' + recipe.recipeName + '</h5>\n        <a href="https://www.yummly.com/recipe/' + recipe.id + '">\n          <img href src="' + recipe.imageUrlsBySize["90"] + '">\n        </a>\n        <h5 class="recipe-rating"> Rating: ' + recipe.rating + '</h5>\n      </section> \n    ');
+	  });
+	};
+
+	$("#back-button").hide();
+
+	$('#back-button').click(function () {
+	  location.reload();
+	});
 
 /***/ })
 /******/ ]);

@@ -18,7 +18,7 @@ Personal Objectives:
 
 ### Deployed with GitHub Pages:
 
-https://emmiehayes.github.io/fe-quantified-self/meals.html
+https://emmiehayes.github.io/fe-quantified-self/index.html
 
 ### Rails Back
 
@@ -43,9 +43,9 @@ Once the server is running, visit in your browser: `http://localhost:8080/`
 
 ### Additional Views:
 
-<img alt="foods_screen" src="https://cl.ly/559ee9111e19/Screen%20Shot%202018-10-16%20at%209.03.51%20PM.jpg">
+<img alt="foods_screen" src="https://cl.ly/0df3ceb8c808/Screen%20Shot%202018-10-20%20at%209.29.08%20PM.jpg">
 
-<img alt="meals_screen" src="https://cl.ly/eac0cbce16b4/Screen%20Shot%202018-10-16%20at%209.03.59%20PM.jpg">
+<img alt="recipes_screen" src="https://cl.ly/70911f3a9c5d/Screen%20Shot%202018-10-20%20at%2010.01.10%20PM.jpg">
 
-<img alt="diary_screen" src="https://cl.ly/14d7f4523cbf/Screen%20Shot%202018-10-16%20at%209.04.08%20PM.jpg">
+
 
